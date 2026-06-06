@@ -6,7 +6,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.calculadoraimc.PantallaEntrada
 import com.example.calculadoraimc.PantallaResultado
-
+import CalculadoraIMCApp
 @Composable
 fun CalculadoraIMCApp() {
     val navController = rememberNavController()
