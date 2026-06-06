@@ -25,3 +25,6 @@ fun CalculadoraIMCApp() {
         }
     }
 }
+fun calcularIMC(peso: Float, altura: Float): Float {
+    return peso / (altura * altura)
+}
