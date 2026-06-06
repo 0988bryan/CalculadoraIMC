@@ -1,5 +1,6 @@
 package com.example.calculadoraimc
 
+import CalculadoraIMCApp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -10,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavType
+import androidx.navigation.NavType //agregamos el import para el nav controller
 import androidx.navigation.compose.*
 import androidx.navigation.navArgument
 
@@ -27,24 +28,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun CalculadoraIMCApp() {
-    val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "pantalla1") {
-        composable("pantalla1") { PantallaEntrada(navController) }
-        composable(
-            route = "resultado/{nombre}/{imc}",
-            arguments = listOf(
-                navArgument("nombre") { type = NavType.StringType },
-                navArgument("imc") { type = NavType.FloatType }
-            )
-        ) { backStackEntry ->
-            val nombre = backStackEntry.arguments?.getString("nombre") ?: ""
-            val imc = backStackEntry.arguments?.getFloat("imc") ?: 0f
-            PantallaResultado(navController, nombre, imc)
-        }
-    }
-}
+
 
 @Composable
 fun PantallaEntrada(navController: androidx.navigation.NavController) {
