@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.calculadoraimc"
-    compileSdk = 37  // <--- ¡Solo esto! Un número simple, nada de versiones o llaves extra.
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.calculadoraimc"
         minSdk = 24
-        targetSdk = 37 // Pon este igual al compileSdk para evitar conflictos
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
